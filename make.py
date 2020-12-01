@@ -124,3 +124,11 @@ copyfile("templates/pygments/monokai.css", PUBLIC_DIR + "/monokai.css")
 # -----------------------
 fg.atom_file(PUBLIC_DIR + '/atom.xml')
 fg.rss_file(PUBLIC_DIR + '/rss.xml')
+
+# ----------------------------------------------------------
+# copy public directory to docs directory for github pages
+# comment out or remove if you aren't using gh-pages
+# ----------------------------------------------------------
+if os.path.exists('docs'):
+    rmtree('docs')
+copytree(PUBLIC_DIR, 'docs')
